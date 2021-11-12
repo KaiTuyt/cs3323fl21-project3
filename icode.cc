@@ -191,6 +191,12 @@ int run (itab_t * itab, char * stack, char * static_mem)
           *dst = - *src;
         }
         // TASK: Complete case for DTYPE_FLOAT
+	if (op->addr2 == DTYPE_FLOAT)
+        {
+          float * src = (float*)(stack + op->addr3);
+          float * dst = (float*)(stack + op->addr1);
+          *dst = - *src;
+        }
         break;
       case OP_FADD:
         // TASK: implement this operation. See respective integer operation defined above.
